@@ -20,4 +20,8 @@ public class HelloController {
         textField.clear();
         textArea.appendText(text + "\n");
     }
+
+    public void onMessage(String message) {
+        textArea.appendText(message + "\n");
+    }
 }
