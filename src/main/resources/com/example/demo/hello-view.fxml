@@ -8,8 +8,8 @@
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
-   <TextArea prefHeight="219.0" prefWidth="531.0" />
-   <TextField prefHeight="25.0" prefWidth="491.0" />
-   <Button mnemonicParsing="false" text="Button" />
+   <TextArea fx:id="textArea" editable="false" focusTraversable="false" prefHeight="219.0" prefWidth="531.0" />
+   <TextField fx:id="textField" onAction="#onSendPress" prefHeight="25.0" prefWidth="491.0" promptText="Insert text here" />
+   <Button mnemonicParsing="false" onAction="#onSendPress" text="Send" />
 
 </VBox>
