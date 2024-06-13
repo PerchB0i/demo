@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -15,10 +16,13 @@ public class HelloController {
     }
 
     @FXML
-    public void onSendPress() {
+    public void onSendPress() throws JsonProcessingException {
         String text = textField.getText();
         textField.clear();
-        textArea.appendText(text + "\n");
+        //textArea.appendText(text + "\n");
+
+        Message messageToSend = new Message(MessageType.Broadcast, text);
+        ClientReceiver.thread.send(messageToSend);
     }
 
     public void onMessage(String message) {
